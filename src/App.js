@@ -55,22 +55,17 @@ const App = () => {
 
   // Function to add a new record
   const addRecord = (newRecord) => {
-    console.log(addRecord, "add");
     setRecords([...records, newRecord]);
   };
 
   // Function to delete a record
   const deleteRecord = (id) => {
-    console.log(id);
-    console.log(records, "recor");
     setRecords(records.filter((record) => record.id !== id));
   };
 
   function handleClick() {
     setshowCreateBtn(!showCreateBtn);
   }
-
-  console.log(records);
   return (
     <div className="app">
       <Routes>
