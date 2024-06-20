@@ -1,6 +1,6 @@
 .app {
-  max-width: 800px;
-  margin: auto;
+  max-width: 80%;
+  margin: 0 auto;
   margin-top: 50px;
   padding: 20px;
   font-family: Arial, sans-serif;
@@ -19,7 +19,7 @@
 .datatable td {
   border: 1px solid #ddd;
   padding: 8px;
-  text-align: left;
+  text-align: center;
 }
 
 .datatable th {
@@ -62,4 +62,8 @@
   display: flex;
   justify-content: space-between;
   align-items: center;
+}
+
+.details-link {
+  text-decoration: none;
 }

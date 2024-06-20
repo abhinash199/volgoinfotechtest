@@ -23,12 +23,21 @@ const DataTable = ({ records, deleteRecord, searchResults }) => {
               <td>{record.email}</td>
               <td>{record.phone}</td>
               <td>
-                {" "}
-                <Link to={`/details/${record.id}`}>Details</Link>
+                <button
+                  type="button"
+                  class="btn btn-danger"
+                  onClick={() => deleteRecord(record.id)}
+                >
+                  Delete
+                </button>
               </td>
               <td>
-                <button onClick={() => deleteRecord(record.id)}>Delete</button>
+                {" "}
+                <Link to={`/details/${record.id}`} className="details-link">
+                  Details
+                </Link>
               </td>
+             
             </tr>
           ))}
         </tbody>

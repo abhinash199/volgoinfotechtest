@@ -1,8 +1,7 @@
-
-import React, { useState } from 'react';
+import React, { useState } from "react";
 const Search = ({ records, setSearchResults }) => {
-    //usestate hooks
-  const [searchTerm, setSearchTerm] = useState('');
+  //usestate hooks
+  const [searchTerm, setSearchTerm] = useState("");
 
   //function to handle Search input
   const handleSearchChange = (e) => {
@@ -10,17 +9,18 @@ const Search = ({ records, setSearchResults }) => {
     setSearchTerm(value);
 
     // Perform search filtering based on email
-    const filteredResults = records.filter(record =>
+    const filteredResults = records.filter((record) =>
       record.email.toLowerCase().includes(value.toLowerCase())
     );
     setSearchResults(filteredResults);
   };
 
   return (
-    <div className="search">
+    <div className="search me-4">
       <input
         type="text"
-        placeholder="Search by email Address"
+        class="form-control"
+        placeholder="Search by Email Address"
         value={searchTerm}
         onChange={handleSearchChange}
       />

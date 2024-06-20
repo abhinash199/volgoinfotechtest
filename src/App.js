@@ -11,7 +11,6 @@ import Search from "./components/Search";
 const App = () => {
   // State to manage search results
   const [searchResults, setSearchResults] = useState([]);
-  const [showCreateBtn, setshowCreateBtn] = useState(true);
 
   // Hardcoded initial data
   const [records, setRecords] = useState([
@@ -19,35 +18,35 @@ const App = () => {
       id: 1,
       name: "John Doe",
       email: "john.doe@example.com",
-      phone: "123-456-7890",
+      phone: "1234567890",
       address: "123 Main St, City A",
     },
     {
       id: 2,
       name: "Jane Smith",
       email: "jane.smith@example.com",
-      phone: "987-654-3210",
+      phone: "9876543210",
       address: "456 Elm St, City B",
     },
     {
       id: 3,
       name: "Michael Johnson",
       email: "michael.johnson@example.com",
-      phone: "111-222-3333",
+      phone: "1112223333",
       address: "789 Oak Ave, City C",
     },
     {
       id: 4,
       name: "Emily Davis",
       email: "emily.davis@example.com",
-      phone: "444-555-6666",
+      phone: "4445556666",
       address: "321 Pine Rd, City D",
     },
     {
       id: 5,
       name: "David Wilson",
       email: "david.wilson@example.com",
-      phone: "777-888-9999",
+      phone: "7778889999",
       address: "555 Cedar Ln, City E",
     },
     // Add more initial records as needed
@@ -63,9 +62,6 @@ const App = () => {
     setRecords(records.filter((record) => record.id !== id));
   };
 
-  function handleClick() {
-    setshowCreateBtn(!showCreateBtn);
-  }
   return (
     <div className="app">
       <Routes>
@@ -73,17 +69,9 @@ const App = () => {
           path="/"
           exact
           element={[
-            <div
-              className="wrapper"
-              style={{ flexDirection: `${showCreateBtn ? "row" : "column"}` }}
-            >
+            <div className="wrapper">
               <Search records={records} setSearchResults={setSearchResults} />
-              ,
-              <AddRecord
-                addRecord={addRecord}
-                showCreateBtn={showCreateBtn}
-                handleClick={handleClick}
-              />
+              <AddRecord addRecord={addRecord} />
             </div>,
             <DataTable
               records={records}
